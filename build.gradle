@@ -2,7 +2,7 @@
 
 buildscript {
     ext {
-        appName = '钱袋掌中保'
+        appName = 'jenkins'
     }
     
     repositories {
