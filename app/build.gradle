@@ -63,7 +63,7 @@ android {
                 //Jenkins打包输出到服务器路径
                 timeNow = BUILD_TIME
                 //BUILD_PATH为服务器输出路径
-               
+
                 //AutoBuildTest-v1.0.1-xiaomi-release.apk
                 newName = 'AutoBuildTest-v' + APP_VERSION + '-' + variant.productFlavors[0].name + '-' + variant.buildType.name + '.apk'
             } else {
@@ -74,10 +74,10 @@ android {
                     newName = "AutoBuildTest-v${APP_VERSION}-debug.apk"
                 } else {
                     //AutoBuildTest-v1.0.1-xiaomi-release.apk
-                    newName = 'AutoBuildTest-v' + APP_VERSION + '-' + variant.productFlavors[0].name + '-' + variant.buildType.name + '.apk'
+                    newName = 'AutoBuildTest-v' + APP_VERSION + '-' + variant.productFlavors[0].name + '-' + variant.buildType.name + '-'+timeNow + '.apk'
                 }
             }
-            output.outputFileName = new File("../../../release/"+'/'+timeNow, newName)
+            output.outputFileName = new File("../../../release/", newName)
         }
     }
 }
