@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">jenkins_test</string>
-    <string name="jenkins_test">这是一个jenkins 测试项目!</string>
+    <string name="jenkins_test">这是一个jenkins 测试项目!版本号 1.0.5 </string>
 </resources>
