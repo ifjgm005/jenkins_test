@@ -5,6 +5,11 @@ static def getDate() {
     def formattedDate = date.format('yyyy-MM-dd-HH-mm')
     return formattedDate
 }
+static def upFirstWorld(String name){
+
+    name = name.substring(0, 1).toUpperCase() + name.substring(1)
+    return name
+}
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -65,7 +70,7 @@ android {
                 //BUILD_PATH为服务器输出路径
 
                 //JenkinsTest-v1.0.1-product-release-2019-10-18 10:35:34.apk
-                newName = 'JenkinsTest-v' + APP_VERSION_NAME + '-' + variant.productFlavors[0].name + '-' + variant.buildType.name + '-' + timeNow + '.apk'
+                newName = 'JenkinsTest-v' + APP_VERSION_NAME + '-' + upFirstWorld(variant.productFlavors[0].name) + '-' + upFirstWorld(variant.buildType.name) + '.apk'
             } else {
                 //本机打包输出在本机路径
                 timeNow = getDate()
@@ -74,7 +79,7 @@ android {
                     newName = "AutoBuildTest-v${APP_VERSION_NAME}-debug.apk"
                 } else {
                     //AutoBuildTest-v1.0.1-xiaomi-release.apk
-                    newName = 'AutoBuildTest-v' + APP_VERSION_NAME + '-' + variant.productFlavors[0].name + '-' + variant.buildType.name + '-'+timeNow + '.apk'
+                    newName = 'JenkinsTest-v' + APP_VERSION_NAME + '-' + upFirstWorld(variant.productFlavors[0].name) + '-' + upFirstWorld(variant.buildType.name) + '.apk'
                 }
             }
 //            打包后放到 app/build/release 包下
