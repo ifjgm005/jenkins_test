@@ -82,8 +82,8 @@ android {
                     newName = 'JenkinsTest-v' + APP_VERSION_NAME + '-' + upFirstWorld(variant.productFlavors[0].name) + '-' + upFirstWorld(variant.buildType.name) + '.apk'
                 }
             }
-//            打包后放到 app/build/release 包下
-            output.outputFileName = new File("../../../release/", newName)
+//            打包后放到 app/build/release/时间戳下 包下
+            output.outputFileName = new File("../../../release/${timeNow}", newName)
         }
     }
 }
